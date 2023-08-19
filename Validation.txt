@@ -1,0 +1,59 @@
+package com.example.myapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Button b = (Button) findViewById(R.id.button);
+        EditText fName = (EditText) findViewById(R.id.editTextTextPersonName2);
+        EditText lName = (EditText) findViewById(R.id.editTextTextPersonName);
+        EditText Email = (EditText) findViewById(R.id.editTextTextPersonName3);
+        EditText Num = (EditText) findViewById(R.id.editTextTextPersonName4);
+        EditText Pass = (EditText) findViewById(R.id.editTextTextPersonName5);
+        EditText PinPass = (EditText) findViewById(R.id.editTextTextPersonName6);
+        EditText City = (EditText) findViewById(R.id.editTextTextPersonName7);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (fName.getText().toString() != "" && lName.getText().toString() != "" && Email.getText().toString() != "" && Num.getText().toString() != "" && Pass.getText().toString() != "" && PinPass.getText().toString() != "" && City.getText().toString() != ""){
+                    Toast.makeText(MainActivity.this, "Registered", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(MainActivity.this, "Please Enter All Fields", Toast.LENGTH_SHORT).show();
+                }
+//                if (fName.getText().toString() == ""){
+//                    Toast.makeText(MainActivity.this, "Enter First Name", Toast.LENGTH_SHORT).show();
+//                }
+//                else if (lName.getText().toString() == ""){
+//                    Toast.makeText(MainActivity.this, "Enter Last Name", Toast.LENGTH_SHORT).show();
+//                }
+//                else if (Email.getText().toString() == ""){
+//                    Toast.makeText(MainActivity.this, "Enter Email", Toast.LENGTH_SHORT).show();
+//                }
+//                else if (Num.getText().toString() == ""){
+//                    Toast.makeText(MainActivity.this, "Enter Number", Toast.LENGTH_SHORT).show();
+//                }else if (Pass.getText().toString() == ""){
+//                    Toast.makeText(MainActivity.this, "Enter Password", Toast.LENGTH_SHORT).show();
+//                }else if (PinPass.getText().toString() == ""){
+//                    Toast.makeText(MainActivity.this, "Enter Pin Password", Toast.LENGTH_SHORT).show();
+//                }else if (City.getText().toString() == ""){
+//                    Toast.makeText(MainActivity.this, "Enter City", Toast.LENGTH_SHORT).show();
+//                }else{
+//                    Toast.makeText(MainActivity.this, "Name: "+fName+" "+lName+"Email: "+Email+"Number: "+Num+"City: "+City, Toast.LENGTH_SHORT).show();
+//                }
+
+
+            }
+        });
+
+    }
+}
